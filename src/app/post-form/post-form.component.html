@@ -1,0 +1,28 @@
+<section class="form-container">
+  <h1>Create a New Post</h1>
+  <form id="postForm" [formGroup]="form" (ngSubmit)="submitForm">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Enter post title"
+        formControlName="title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="body">Body</label>
+      <textarea
+        id="body"
+        name="body"
+        rows="5"
+        formControlName="body"
+        placeholder="Write your post content here..."
+        required
+      ></textarea>
+    </div>
+    <button type="submit" class="btn">Create Post</button>
+  </form>
+</section>
