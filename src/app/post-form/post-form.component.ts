@@ -14,10 +14,24 @@ import { Post } from '../interfaces/post';
   styleUrl: './post-form.component.css',
 })
 export class PostFormComponent {
+  get formTitle() {
+    return this.form.get('title')?.value;
+  }
+  get formBody() {
+    return this.form.get('body')?.value;
+  }
+
   submitForm = output<Post>();
 
   form = new FormGroup({
     title: new FormControl('', { nonNullable: true }),
     body: new FormControl('', { nonNullable: true }),
   });
+
+  onSubmit() {
+    if (!this.formTitle || !this.formBody) return;
+
+    this.submitForm.emit(this.form.getRawValue());
+    this.form.reset();
+  }
 }

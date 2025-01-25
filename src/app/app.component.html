@@ -1,9 +1,11 @@
 <main class="main">
   <section class="post-list">
-    @for (post of posts; track $index) {
+    @for (post of posts(); track post.title) {
     <app-post-card [post]="post" />
+    } @empty {
+    <p>No item found</p>
     }
   </section>
 
-<app-post-form/>
+  <app-post-form (submitForm)="addPost($event)" />
 </main>

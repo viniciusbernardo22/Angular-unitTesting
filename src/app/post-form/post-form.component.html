@@ -1,6 +1,10 @@
 <section class="form-container">
   <h1>Create a New Post</h1>
-  <form id="postForm" [formGroup]="form" (ngSubmit)="submitForm">
+  <form
+    id="postForm"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+  >
     <div class="form-group">
       <label for="title">Title</label>
       <input
