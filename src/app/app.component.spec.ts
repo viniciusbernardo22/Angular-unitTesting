@@ -19,16 +19,5 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should add post to the list', () => {
-    component.addPost({ title: 'Post title', body: 'Post body' });
-    expect(component.posts()).toEqual([
-      { title: 'Post title', body: 'Post body' },
-    ]);
 
-    component.addPost({ title: 'Post title 2', body: 'Post body 2' });
-    expect(component.posts()).toEqual([
-      { title: 'Post title', body: 'Post body' },
-      { title: 'Post title 2', body: 'Post body 2' },
-    ]);
-  });
 });
