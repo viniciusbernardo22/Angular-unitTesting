@@ -1,31 +1,9 @@
 <main class="main">
   <section class="post-list">
-    <article class="post">
-      <h2 class="post-title">How to Learn Angular</h2>
-      <p class="post-body">Angular is a powerful framework for building dynamic web applications. This guide will help you get started.</p>
-    </article>
-    <article class="post">
-      <h2 class="post-title">Understanding TypeScript</h2>
-      <p class="post-body">TypeScript is a typed superset of JavaScript that makes coding easier and more reliable. Dive in to learn the basics.</p>
-    </article>
-    <article class="post">
-      <h2 class="post-title">CSS Tips for Beginners</h2>
-      <p class="post-body">Want to make your websites look stunning? These CSS tips will help you design like a pro.</p>
-    </article>
+    @for (post of posts; track $index) {
+    <app-post-card [post]="post" />
+    }
   </section>
 
-  <section class="form-container">
-    <h1>Create a New Post</h1>
-    <form id="postForm">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" placeholder="Enter post title" required />
-      </div>
-      <div class="form-group">
-        <label for="body">Body</label>
-        <textarea id="body" name="body" rows="5" placeholder="Write your post content here..." required></textarea>
-      </div>
-      <button type="submit" class="btn">Create Post</button>
-    </form>
-  </section>
+<app-post-form/>
 </main>
